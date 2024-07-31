@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "c68cdfdd-5f00-4ae4-89e9-bb596e827e1a",
+		"name": "HUMC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15899909"
+	},
+	"item": [
+		{
+			"name": "Laboratorium",
+			"item": [
+				{
+					"name": "createLab",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postcode\":\"1234AB\",\r\n    \"straatnaam\": \"straatnaam\",\r\n    \"huisnummer\":1,\r\n    \"ruimtenummer\": 1,\r\n    \"halnummer\": 1,\r\n    \"naam\": \"lab1\", \r\n    \"type\": \"onderzoek\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/laboratorium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"laboratorium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replaceBeheerder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"laboratoriumId\": 0,\r\n    \"beheerderId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/laboratorium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"laboratorium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medewerker",
+			"item": [
+				{
+					"name": "Createmedewerker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"voornaam\": \"henk\",\r\n    \"initialen\": \"H\",\r\n    \"achternaam\": \"achteren\",\r\n    \"woonplaats\": \"utrecht\",\r\n    \"adres\": \"straat1\",\r\n    \"postcode\": \"1234AB\",\r\n    \"email\": \"henk@email\",\r\n    \"telefoonnummer\": \"0612345678\",\r\n    \"functie\": \"arts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medewerker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medewerker"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get medewerker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medewerker/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medewerker",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update medewerkers email",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"email2@mail2.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medewerker/update/1/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medewerker",
+								"update",
+								"1",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ruimte",
+			"item": [
+				{
+					"name": "AddMiddel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"naam\": \"vitamineD\",\r\n    \"beschrijving\": \"pilletjes die vitamineD bevatten\",\r\n    \"ruimteId\": 0,\r\n    \"registratieDatum\": \"2019-08-24T14:15:22Z\",\r\n    \"houdbaarheidsDatum\": \"2019-08-24T14:15:22Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/ruimte/middel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ruimte",
+								"middel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRuimte",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/ruimte?id=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ruimte"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMiddel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"middelId\": 4,\r\n    \"ruimteId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/ruimte/middel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ruimte",
+								"middel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getbenodigdheden",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"123\",\r\n    \"aanvragerId\": 1,\r\n    \"benodigdeMiddelen\": {\r\n        \"vitamineD\": 1\r\n    },\r\n    \"startDatumOnderzoek\": \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/ruimte/beschikbaar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ruimte",
+								"beschikbaar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verplaats middel",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "middel afwezig",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "roosterpunt",
+			"item": [
+				{
+					"name": "create roosterpunt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"begintijd\": \"2016-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2018-02-05T12:59:11.332\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/roosterpunt?roosterId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"roosterpunt"
+							],
+							"query": [
+								{
+									"key": "roosterId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoosterpuntByRuimte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/roosterpunt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"roosterpunt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoosterpuntenByPeriode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/roosterpunt/1/periode/2025-02-05T12:59:11.1/2026-02-05T12:59:11.1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"roosterpunt",
+								"1",
+								"periode",
+								"2025-02-05T12:59:11.1",
+								"2026-02-05T12:59:11.1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rooster",
+			"item": [
+				{
+					"name": "create rooster",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/rooster",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"rooster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get rooster",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/rooster/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"rooster",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "onderzoek",
+			"item": [
+				{
+					"name": "create onderzoek",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 21,\r\n    \"begindatum\": \"\",\r\n    \"einddatum\": \"\",\r\n    \"beschrijving\": \"iets\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/onderzoek/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"onderzoek",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inventaris",
+			"item": [
+				{
+					"name": "keuritems",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"goedgekeurdeMiddelen\": [\r\n        1\r\n    ],\r\n    \"afgekeurdeMiddelen\": [\r\n        2\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/inventaris/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"inventaris",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveAddItems",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approvedItems\": [\r\n        1\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/ruimte/approveadditems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"ruimte",
+								"approveadditems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "onderzoeksbenodigdheden",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/inventaris/onderzoeksbenodigdheden",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"inventaris",
+								"onderzoeksbenodigdheden"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

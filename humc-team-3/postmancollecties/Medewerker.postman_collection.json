@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "f1417087-a56f-46e0-8db9-3b285cc3fc1c",
+		"name": "Medewerker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"naam\": \"Ruben\",\r\n    \"woonplaats\": \"Bunschoten\",\r\n    \"adres\": \"ergens\",\r\n    \"email\": \"email@email.com\",\r\n    \"telefoonnummer\": \"telefoonnummer\",\r\n    \"functie\": \"Developer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/medewerker",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medewerker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget\" : 3000,\r\n    \"begindatum\" : \"2019-02-05T22:08:28.097832\",\r\n    \"einddatum\" : \"2020-02-05T22:08:28.097832\",\r\n    \"beschrijving\" : \"TEST 123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/onderzoek",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"onderzoek"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/onderzoek/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"onderzoek",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addResearcher",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MId\" : 1,\r\n    \"OId\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/onderzoek",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"onderzoek"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

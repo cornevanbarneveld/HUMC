@@ -1,0 +1,15 @@
+package nl.hu.inno.humc.ruimtebeheer.presentation.dto.ruimte;
+
+import nl.hu.inno.humc.ruimtebeheer.presentation.dto.InventarisDto;
+
+public record RuimteDto(
+        Long id,
+        String postcode,
+        String straatnaam,
+        int huisnummer,
+        int ruimtenummer,
+        int halnummer,
+        String naam,
+        InventarisDto inventarisDto
+        ) {
+}

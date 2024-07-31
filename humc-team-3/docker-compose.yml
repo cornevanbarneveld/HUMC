@@ -1,0 +1,92 @@
+version: "3.9"
+services:
+#  monoliet:
+#    image: monoliet:latest
+#    restart: unless-stopped
+#    build:
+#      dockerfile: monoliet/src/main/docker/Dockerfile
+#    ports:
+#      - "8083:8083"
+#  onderzoek:
+#    image: onderzoek
+#    restart: unless-stopped
+#    build:
+#      dockerfile: onderzoek/src/main/docker/Dockerfile
+#    ports:
+#      - "8080:8080"
+  ruimtebeheer:
+    image: ruimtebeheer
+    restart: unless-stopped
+    build:
+      dockerfile: ruimtebeheer/src/main/docker/Dockerfile
+    ports:
+      - "8085:8085"
+#  roostering:
+#    image: roostering
+#    restart: unless-stopped
+#    build:
+#      dockerfile: roostering/src/main/docker/Dockerfile
+#    ports:
+#      - "8086:8086"
+#  db:
+#    container_name: db
+#    image: postgres:latest
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - ./docker/init:/docker-entrypoint-initdb.d
+#    environment:
+#      POSTGRES_USER: admin
+#      POSTGRES_PASSWORD: admin
+#  pgadmin:
+#      image: dpage/pgadmin4
+#      ports:
+#        - 8081:80
+#      environment:
+#          PGADMIN_DEFAULT_EMAIL: admin@email.com
+#          PGADMIN_DEFAULT_PASSWORD: password
+#  mongo:
+#    image: mongo:latest
+#    restart: always
+#    ports:
+#    - "27017:27017"
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: monoliet
+#  mongo-express:
+#    image: mongo-express:latest
+#    restart: always
+#    ports:
+#      - "8082:8081"
+#    environment:
+#      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+#      ME_CONFIG_MONGODB_ADMINPASSWORD: monoliet
+#      ME_CONFIG_MONGODB_URL: mongodb://root:monoliet@mongo:27017/
+  rabbitmqm:
+    image: rabbitmq:3-management
+    volumes:
+      - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/defu.json
+      - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+      - ./rabbitmq/logs:/var/log/rabbitmq/log
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  neo4j:
+    image: neo4j:latest
+    restart: unless-stopped
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/admin
+      - NEO4J_dbms_security_auth__minimum__password__length=2
+#  neo4jOnderzoek:
+#    image: neo4j:latest
+#    restart: unless-stopped
+#    ports:
+#      - "7475:7474"
+#      - "7688:7687"
+#    environment:
+#      - NEO4J_AUTH=neo4j/admin
+#      - NEO4J_dbms_security_auth__minimum__password__length=2

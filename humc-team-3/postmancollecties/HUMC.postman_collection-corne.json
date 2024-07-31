@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "c68cdfdd-5f00-4ae4-89e9-bb596e827e1a",
+		"name": "HUMC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15899909"
+	},
+	"item": [
+		{
+			"name": "Laboratorium",
+			"item": [
+				{
+					"name": "createLab",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postcode\":\"1234AB\",\r\n    \"straatnaam\": \"straatnaam\",\r\n    \"huisnummer\":1,\r\n    \"ruimtenummer\": 1,\r\n    \"halnummer\": 1,\r\n    \"naam\": \"lab1\", \r\n    \"type\": \"onderzoek\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/laboratorium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratorium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replaceBeheerder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"laboratoriumId\": 1,\r\n    \"medewerkerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/laboratorium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"laboratorium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medewerker",
+			"item": [
+				{
+					"name": "Createmedewerker",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"voornaam\": \"henk\",\r\n    \"initialen\": \"H\",\r\n    \"achternaam\": \"achteren\",\r\n    \"woonplaats\": \"utrecht\",\r\n    \"adres\": \"straat1\",\r\n    \"postcode\": \"1234AB\",\r\n    \"email\": \"henk@email\",\r\n    \"telefoonnummer\": \"0612345678\",\r\n    \"functie\": \"arts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medewerker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medewerker"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ruimte",
+			"item": [
+				{
+					"name": "AddApparaat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"naam\": \"schroevendraaier\",\r\n    \"elektrisch\": \"false\",\r\n    \"id\": \"1234ABCD\",\r\n    \"ruimteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ruimte/apparaat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ruimte",
+								"apparaat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMiddel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"naam\": \"vitamineD\",\r\n    \"beschrijving\": \"pilletjes die vitamineD bevatten\",\r\n    \"middelId\": \"sda76abd\",\r\n    \"ruimteId\": 1,\r\n    \"registratieDatum\": \"2019-08-24T14:15:22Z\",\r\n    \"houdbaarheidsDatum\": \"2019-08-24T14:15:22Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ruimte/middel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ruimte",
+								"middel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRuimte",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "id",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ruimte?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ruimte"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteApparaat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apparaatId\": \"1234ABCD\",\r\n    \"ruimteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ruimte/apparaat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ruimte",
+								"apparaat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMiddel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"middelId\": \"sda76abd\",\r\n    \"ruimteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ruimte/middel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ruimte",
+								"middel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

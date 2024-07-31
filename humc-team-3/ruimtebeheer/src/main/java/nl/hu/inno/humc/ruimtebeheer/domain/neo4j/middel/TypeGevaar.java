@@ -1,0 +1,19 @@
+package nl.hu.inno.humc.ruimtebeheer.domain.neo4j.middel;
+
+public enum TypeGevaar {
+    GIFTIG,
+    ZEERGIFTIG,
+    BIJTEND,
+    SCHADELIJK,
+    IRRITEREND,
+    OXIDEREND,
+    REDUCINGAGENT,
+    VOORZELFONTBRANDINGVATBAAR,
+    ONTVLAMBAAR,
+    ONTPLOFBAAR,
+    CARCINOGEEN,
+    SCHADELIJKVOORHETMILIEU,
+    GEVAARLIJKINCONTACTMETWATER,
+    RADIOACTIEF
+
+}

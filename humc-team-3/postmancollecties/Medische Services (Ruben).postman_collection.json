@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "58a1ea88-f092-490f-bd8d-45f80ff45886",
+		"name": "Medische Services (Ruben)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15748303"
+	},
+	"item": [
+		{
+			"name": "create rooster",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/rooster",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"rooster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get rooster",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/rooster",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"rooster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create medewerker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"voornaam\": \"Ruben\",\r\n    \"initialen\": \"R.R\",\r\n    \"achternaam\": \"van Rooijen\",\r\n    \"woonplaats\": \"Bunschoten\",\r\n    \"adres\": \"unknown\",\r\n    \"postcode\": \"1111AA\",\r\n    \"email\": \"email@mail.com\",\r\n    \"telefoonnummer\": \"0615136681\",\r\n    \"functie\": \"arts\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/medewerker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"medewerker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get medewerker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/medewerker/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"medewerker",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update medewerkers email",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email2@mail2.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/medewerker/update/1/email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"medewerker",
+						"update",
+						"1",
+						"email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create roosterpunt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"beschrijving\": \"zelfstandig werken\",\r\n    \"ruimteNummer\": 1,\r\n    \"begintijd\": \"2025-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2026-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/9765f886-5d0a-4c24-9fc2-33046c907422/roosterpunt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"9765f886-5d0a-4c24-9fc2-33046c907422",
+						"roosterpunt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "annuleer roosterpunt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"begintijd\": \"2025-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2026-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/f2d937ee-ad8d-4044-ba59-16330259fe24/roosterpunt/annuleer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"f2d937ee-ad8d-4044-ba59-16330259fe24",
+						"roosterpunt",
+						"annuleer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set ruimte roosterpunt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"begintijd\": \"2025-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2026-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/427256a7-a1ae-45d0-b0bd-132239a483d7/roosterpunt/locatie/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"427256a7-a1ae-45d0-b0bd-132239a483d7",
+						"roosterpunt",
+						"locatie",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add medewerker to roosterpunt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"begintijd\": \"2025-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2026-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/8e90cd8a-5544-423f-9685-e9515d4ac4a3/roosterpunt/addMedewerker/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"8e90cd8a-5544-423f-9685-e9515d4ac4a3",
+						"roosterpunt",
+						"addMedewerker",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add middel to roosterpunt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organisatorId\": 1,\r\n    \"begintijd\": \"2025-02-05T12:59:11.332\",\r\n    \"eindtijd\": \"2026-02-05T12:59:11.332\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8086/c18d594e-9b83-4cea-9820-59f2780d725c/roosterpunt/addMiddel/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"c18d594e-9b83-4cea-9820-59f2780d725c",
+						"roosterpunt",
+						"addMiddel",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get roosterpunten by ruimte nummer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8086/65b4d6b1-4e65-43a1-a697-2c4cb213ea0a/roosterpunt/ruimte/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8086",
+					"path": [
+						"65b4d6b1-4e65-43a1-a697-2c4cb213ea0a",
+						"roosterpunt",
+						"ruimte",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
